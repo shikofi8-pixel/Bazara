@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
-
+import Payment from './Payment'
 const SUPABASE_URL = "https://kpnxxpmfiwhonphmgazq.supabase.co";
 const SUPABASE_KEY = "sb_publishable_DIBefLmMh9YfcUFPWhwGLg_TJH6HHaX";
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -308,7 +308,7 @@ export default function Bazara() {
                   <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16, fontWeight: 800, fontSize: 19 }}>
                     <span>Total</span><span style={{ color: "#c8460a" }}>${cartTotal.toFixed(2)}</span>
                   </div>
-                  <button className="btn" style={{ width: "100%", padding: 13 }} onClick={() => { setCart([]); showToast("🎉 Order placed!"); setView("browse"); }}>Checkout → Pay ${cartTotal.toFixed(2)}</button>
+                  <Payment user={user} amount={cartTotal} onSuccess={(ref) => { showToast("🎉 Payment successful! Ref: " + ref.reference); setCart([]); setView("browse"); }} />
                 </div>
               </>
             )}
