@@ -14,7 +14,7 @@ const SAMPLE_PRODUCTS = [
   { id: "s6", name: "Business Plan Template", price: 7, category: "digital", seller_name: "StartupToolkit", rating: 4.8, sales: 450, image: "📄", description: "Professional editable business plan.", tag: "Bestseller" },
 ];
 
-export default function Bazara() {
+export default function Davlys() {
   const [view, setView] = useState("browse");
   const [user, setUser] = useState(null);
   const [authMode, setAuthMode] = useState("login");
@@ -157,7 +157,7 @@ export default function Bazara() {
       <header style={{ background: "#fff", borderBottom: "1.5px solid #ede6dc", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60, position: "sticky", top: 0, zIndex: 100 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <span style={{ fontSize: 24 }}>🏪</span>
-          <span className="playfair" style={{ fontSize: 22, fontWeight: 900, color: "#c8460a" }}>Bazara</span>
+          <span className="playfair" style={{ fontSize: 22, fontWeight: 900, color: "#c8460a" }}>Davlys</span>
         </div>
         <nav style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
           {navItems.map(n => (
